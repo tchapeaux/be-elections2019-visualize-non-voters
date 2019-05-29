@@ -3,8 +3,27 @@
 // Data from https://elections2019.belgium.be/fr/election?el=CK
 // Retrieved 28th of May 2019
 
+const PARTIES_NAMES = [
+  "N-VA",
+  "VB",
+  "PS",
+  "CD&V",
+  "PTB/PvdA",
+  "Open Vld",
+  "MR",
+  "sp.a",
+  "Ecolo",
+  "Groen",
+  "cdH",
+  "DéFI",
+  "Partis sans sièges",
+  "Votes blancs et invalides",
+  "Abstentions"
+];
+
 const PARTIES_PERCENTS = [
-  // These are not the official results
+  // These are not the official results ("pourcentages de voix exprimées")
+  // Here we take the 'non-voters' into account to compute the value
   13.31,
   9.92,
   7.86,
@@ -49,23 +68,7 @@ const config = {
         ]
       }
     ],
-    labels: [
-      "N-VA",
-      "VB",
-      "PS",
-      "CD&V",
-      "PTB/PvdA",
-      "Open Vld",
-      "MR",
-      "sp.a",
-      "Ecolo",
-      "Groen",
-      "cdH",
-      "DéFI",
-      "Partis sans sièges",
-      "Votes blancs et invalides",
-      "Abstentions"
-    ]
+    labels: PARTIES_NAMES
   },
   options: {
     responsive: true,
@@ -77,8 +80,7 @@ const config = {
       text: "Pourcentage de vote"
     },
     animation: {
-      animateScale: true,
-      animateRotate: true
+      animateScale: true
     },
     circumference: Math.PI,
     rotation: -Math.PI,

@@ -9,70 +9,68 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css"
     />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./styles.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-    <style>
-      canvas {
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        max-width: 600px;
-      }
-    </style>
   </head>
 
   <body>
-    <h1>Résultats de l'élection fédérale belge de 2019</h1>
-    <p>
-      Voici comment les belges ont voté lors du scrutin de mai 2019. Les
-      pourcentages affichés prennent en compte les non-votant·e·s et sont donc
-      différents des <em>pourcentages de voix exprimées</em> (qui sont
-      traditionnellement
-      <a href="https://elections2019.belgium.be/fr/election?el=CK"
-        >les chiffres communiqués</a
-      >).
-    </p>
-    <p>
-      Utilisez ce bouton pour voir comment ces voix ont été traduites en
-      siège:<br />
-      <button id="toggle_btn" onclick="toggle_view()">Voir les sièges</button>
-    </p>
+    <div class="container">
+      <h1>Résultats de l'élection fédérale belge de 2019</h1>
+      <p>
+        Voici comment les belges ont voté lors du scrutin de mai 2019. Les
+        pourcentages affichés prennent en compte les non-votant·e·s et sont donc
+        différents des <em>pourcentages de voix exprimées</em> (qui sont
+        traditionnellement
+        <a href="https://elections2019.belgium.be/fr/election?el=CK"
+          >les chiffres communiqués</a
+        >).
+      </p>
+      <p>
+        Utilisez ce bouton pour voir comment ces voix ont été traduites en
+        siège:<br />
+        <button id="toggle_btn" onclick="toggle_view()">Voir les sièges</button>
+      </p>
+    </div>
+
     <div id="canvas-holder" style="width:100%">
       <canvas id="chart-area"></canvas>
     </div>
 
-    <h2>Que se passe-t-il ?</h2>
+    <div class="container">
+      <h2>Que se passe-t-il ?</h2>
 
-    <p>
-      Une fois ces chiffres obtenus, il faut les convertir en nombre de sièges
-      au parlement.
-    </p>
-    <p>
-      La première étape est d'ignorer pour le calcul de répartition des sièges :
-    </p>
-    <ul>
-      <li>Les abstentions (11.62%)</li>
-      <li>Les votes blancs ou nuls (5.36%)</li>
-    </ul>
-    <p>
-      Ensuite, les sièges sont distribués région par région, en suivant
-      <a
-        href="https://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal#M%C3%A9thode_de_Jefferson_ou_m%C3%A9thode_d'Hondt"
-        >la méthode de Jefferson (ou méthode d'Hondt)</a
-      >. Cette méthode s'approche d'une répartition proportionnelle, mais en
-      favorisant les plus gros partis. Elle ne garanti pas un siège à chaque
-      parti, donc certains partis (totalisant 3.38% des voix) se retrouvent sans
-      siège. Avec les chiffres ignorés plus tôt, on peut considérer que
-      <strong>20.36%</strong> des électeur·rice·s ne sont pas représenté·e·s par
-      un siège au parlement.
-    </p>
-    <p>
-      Voir aussi :
-      <a
-        href="https://fr.wikipedia.org/wiki/%C3%89lections_en_Belgique#%C3%89lections_f%C3%A9d%C3%A9rales_(Chambre_des_repr%C3%A9sentants)"
-        >l'explication sur Wikipédia</a
-      >
-    </p>
+      <p>
+        Une fois ces chiffres obtenus, il faut les convertir en nombre de sièges
+        au parlement.
+      </p>
+      <p>
+        La première étape est d'ignorer pour le calcul de répartition des sièges :
+      </p>
+      <ul>
+        <li>Les abstentions (11.62%)</li>
+        <li>Les votes blancs ou nuls (5.36%)</li>
+      </ul>
+      <p>
+        Ensuite, les sièges sont distribués région par région, en suivant
+        <a
+          href="https://fr.wikipedia.org/wiki/Scrutin_proportionnel_plurinominal#M%C3%A9thode_de_Jefferson_ou_m%C3%A9thode_d'Hondt"
+          >la méthode de Jefferson (ou méthode d'Hondt)</a
+        >. Cette méthode s'approche d'une répartition proportionnelle, mais en
+        favorisant les plus gros partis. Elle ne garanti pas un siège à chaque
+        parti, donc certains partis (totalisant 3.38% des voix) se retrouvent sans
+        siège. Avec les chiffres ignorés plus tôt, on peut considérer que
+        <strong>20.36%</strong> des électeur·rice·s ne sont pas représenté·e·s par
+        un siège au parlement.
+      </p>
+      <p>
+        Voir aussi :
+        <a
+          href="https://fr.wikipedia.org/wiki/%C3%89lections_en_Belgique#%C3%89lections_f%C3%A9d%C3%A9rales_(Chambre_des_repr%C3%A9sentants)"
+          >l'explication sur Wikipédia</a
+        >
+      </p>
+    </div>
 
     <script src="./app.js"></script>
   </body>
